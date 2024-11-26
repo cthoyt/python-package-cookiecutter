@@ -64,7 +64,7 @@ dependencies = [
 [project.optional-dependencies]
 tests = [
     "pytest",
-    "coverage",
+    "coverage[toml]",
 ]
 docs = [
     "sphinx>=8",
