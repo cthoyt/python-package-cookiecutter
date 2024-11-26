@@ -81,9 +81,16 @@ jobs:
         with:
           enable-cache: true
           cache-dependency-glob: "pyproject.toml"
+
       - name: Test with pytest and generate coverage file
         run:
           uvx -p ${{ "{{" }} matrix.python-version {{ "}}" }} {{ cookiecutter.__runner_uv }} {{ cookiecutter.__runner_tests }}
+
+      - name: Build codecov file
+        if: success()
+        run:
+          tox -e coverage-xml
+
       - name: Upload coverage report to codecov
         uses: codecov/codecov-action@v4
         if: success()
