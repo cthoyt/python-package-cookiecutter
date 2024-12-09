@@ -21,7 +21,6 @@ classifiers = [
     "Development Status :: 1 - Planning",
     "Environment :: Console",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Framework :: Pytest",
     {%- if cookiecutter.runner == "tox" %}
@@ -48,8 +47,10 @@ keywords = [
 
 # License Information. This can be any valid SPDX identifiers that can be resolved
 # with URLs like https://spdx.org/licenses/MIT
-# See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license
-license = { file = "LICENSE" }
+# See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license and
+# also https://discuss.python.org/t/pep-639-round-3-improving-license-clarity-with-better-package-metadata/53020/128
+license = "MIT"
+license-files = ["LICENSE"]
 
 requires-python = ">=3.10"
 dependencies = [
